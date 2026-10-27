@@ -1,0 +1,62 @@
+captive_portal:
+
+time:
+  - platform: sntp
+    id: sntp_time
+
+sensor:
+  # ==========================================
+  # 1. SENSORE DI PORTATA ISTANTANEA (L/min)
+  # Misura gli impulsi del flussimetro collegato sul GPIO2
+  # ==========================================
+  - platform: pulse_counter
+    pin: 
+      number: GPIO2
+      mode:
+        input: true
+        pullup: true
+    state_class: measurement
+    name: "Contatore acqua"
+    id: Contatore_acqua
+    update_interval: 1s
+    filters:
+      - lambda: return (x / 800.0); # Fattore di calibrazione testato e calibrato sul campo
+    unit_of_measurement: "L/min"
+    icon: "mdi:water-pump"
+
+  # ==========================================
+  # 2. INTEGRATORE PER METRI CUBI (m³)
+  # Converte la portata in volume totale accumulato in m³
+  # ==========================================
+  - platform: integration
+    device_class: water
+    state_class: total_increasing
+    name: "Acqua in m³"
+    unit_of_measurement: 'm³'
+    accuracy_decimals: 4
+    sensor: Contatore_acqua
+    time_unit: min
+    icon: "mdi:water"
+    filters:
+      - lambda: return (x / 1000);
+
+  # ==========================================
+  # 3. INTEGRATORE PER LITRI TOTALI (L)
+  # Converte la portata in litri totali consumati
+  # ==========================================
+  - platform: integration
+    device_class: water
+    state_class: total_increasing
+    name: "Acqua in litri"
+    unit_of_measurement: 'L'
+    accuracy_decimals: 1
+    sensor: Contatore_acqua
+    time_unit: min
+    icon: "mdi:water"
+    filters:
+      - lambda: return (x * 2.7);
+
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      name: "Indirizzo IP WiFi"

@@ -1,4 +1,4 @@
-ContatoreSmart.png
+![Anteprima Contatore](ContatoreSmart.png)
 
 🛠️ Guida Passo-Passo: Contatore Acqua Smart con ESP32-C3 e ESPHome
 Questa guida descrive la procedura completa per costruire, programmare e integrare in Home Assistant un contatore dell'acqua smart basato su ESP32-C3 Super Mini e flussimetro a impulsi.

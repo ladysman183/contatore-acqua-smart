@@ -2,6 +2,9 @@
 
 🛠️ Guida Passo-Passo: Contatore Acqua Smart con ESP32-C3 e ESPHome
 Questa guida descrive la procedura completa per costruire, programmare e integrare in Home Assistant un contatore dell'acqua smart basato su ESP32-C3 Super Mini e flussimetro a impulsi.
+
+[![Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/ladysman183)
+
 📌 Consigli Preliminari
 Browser consigliato: Utilizzare preferibilmente Google Chrome per una gestione stabile della porta seriale USB durante il primo flashing.   
 

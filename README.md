@@ -139,3 +139,10 @@ Verrà richiesto di inserire la API Key del sensore salvata in precedenza.
 Incollare la chiave e cliccare su Avanti.   
 
 Cliccare su Salta e termina.
+
+
+
+---
+💬 **Supporto e Domande:** Hai domande o problemi con la configurazione? Apri una [Issue](https://github.com/ladysman183/contatore-acqua-smart/issues) oppure cercami su [TikTok](https://www.tiktok.com/@ladysman183)!
+
+
